@@ -1,0 +1,42 @@
+Arguments: 
+  /usr/bin/node /usr/share/yarn/bin/yarn.js add axios
+
+PATH: 
+  /home/jamal13647850/.local/bin:/home/jamal13647850/bin:/home/jamal13647850/.local/bin:/home/jamal13647850/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/home/jamal13647850/.dotnet/tools:/home/jamal13647850/.dotnet/tools
+
+Yarn version: 
+  1.22.5
+
+Node version: 
+  14.16.0
+
+Platform: 
+  linux x64
+
+Trace: 
+  SyntaxError: /home/jamal13647850/Desktop/IELTS_pilot_tests_st/idpayjs/package.json: Unexpected token } in JSON at position 357
+      at JSON.parse (<anonymous>)
+      at /usr/share/yarn/lib/cli.js:1625:59
+      at Generator.next (<anonymous>)
+      at step (/usr/share/yarn/lib/cli.js:310:30)
+      at /usr/share/yarn/lib/cli.js:321:13
+
+npm manifest: 
+  {
+    "name": "idpayjs",
+    "version": "1.0.0",
+    "description": "A JavaScript plugin for the idpay payment gateway",
+    "main": "./dist/index.js",
+    "repository": "https://github.com/jamal13647850/idpayjs",
+    "author": "Sayyed Jamal Ghasemi <jamal13647850@gmail.com>",
+    "license": "MIT",
+    "scripts": {
+      "build": "tsc --outDir ./dist/ ./src/index.ts"
+    },
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
