@@ -56,7 +56,7 @@ class idpay {
     });
   };
 
-  static Request: Function = (para:RQ): Promise<any> => {
+  Request: Function = (para:RQ): Promise<any> => {
     const data = qs.stringify(para);
 
     return idpay.setRequest(data, `${idpay.urlStart}`);
