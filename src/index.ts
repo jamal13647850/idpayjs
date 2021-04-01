@@ -36,7 +36,7 @@ class idpay {
       method: "post",
       url: url,
       headers: {
-        "Content-Type": "application/x-www-form-urlencoded",
+        "Content-Type": "application/json",
         "X-API-KEY": idpay.apiKey,
         "X-SANDBOX": idpay.SandBox,
       },
