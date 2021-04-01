@@ -2,6 +2,10 @@ var axios = require("axios");
 var qs = require("qs");
 var idpay = /** @class */ (function () {
     function idpay(apiKey, SandBox) {
+        this.Request = function (para) {
+            var data = JSON.stringify(para);
+            return idpay.setRequest(data, "" + idpay.urlStart);
+        };
         idpay.apiKey = apiKey;
         idpay.SandBox = SandBox;
     }
@@ -29,10 +33,6 @@ var idpay = /** @class */ (function () {
                 reject(error);
             });
         });
-    };
-    idpay.Request = function (para) {
-        var data = qs.stringify(para);
-        return idpay.setRequest(data, "" + idpay.urlStart);
     };
     return idpay;
 }());

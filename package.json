@@ -1,6 +1,6 @@
 {
   "name": "idpayjs",
-  "version": "1.3.0",
+  "version": "1.4.0",
   "description": "A JavaScript plugin for the idpay payment gateway",
   "main": "./dist/index.js",
   "repository": "https://github.com/jamal13647850/idpayjs",
