@@ -32,6 +32,12 @@ var idpay = /** @class */ (function () {
             var page = para.page, page_size = para.page_size;
             return idpay.setRequest(data, idpay.urlStart + "/transactions?" + (page ? "page=" + page : "") + (page && page_size ? "&page_size=" + page_size : "page_size=" + page_size));
         };
+        this.toRial = function (amount) {
+            return amount * 10;
+        };
+        this.toToman = function (amount) {
+            return amount / 10;
+        };
         idpay.apiKey = apiKey;
         idpay.SandBox = SandBox;
     }

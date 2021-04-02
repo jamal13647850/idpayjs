@@ -117,6 +117,14 @@ class idpay {
     return idpay.setRequest(data, `${idpay.urlStart}/transactions?${page?"page="+page:""}${page && page_size?"&page_size="+page_size:"page_size="+page_size}`);
   };
 
+  toRial: Function = (amount:number):number=>{
+    return amount*10;
+  }
+
+  toToman: Function = (amount:number):number=>{
+    return amount/10;
+  }
+
   
 }
 
