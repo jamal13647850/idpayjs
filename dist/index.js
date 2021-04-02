@@ -1,10 +1,36 @@
 var axios = require("axios");
-var qs = require("qs");
+var transactionsStatus = [
+    { code: 1, description: "پرداخت انجام نشده است" },
+    { code: 2, description: "پرداخت ناموفق بوده است" },
+    { code: 3, description: "خطا رخ داده است" },
+    { code: 4, description: "بلوکه شده" },
+    { code: 5, description: "برگشت به پرداخت کننده" },
+    { code: 6, description: "برگشت خورده سیستمی" },
+    { code: 7, description: "انصراف از پرداخت" },
+    { code: 8, description: "به درگاه پرداخت منتقل شد" },
+    { code: 10, description: "در انتظار تایید پرداخت" },
+    { code: 100, description: "پرداخت تایید شده است" },
+    { code: 101, description: "پرداخت قبلا تایید شده است" },
+    { code: 200, description: "به دریافت کننده واریز شد" },
+];
 var idpay = /** @class */ (function () {
     function idpay(apiKey, SandBox) {
-        this.Request = function (para) {
+        this.request = function (para) {
             var data = JSON.stringify(para);
             return idpay.setRequest(data, "" + idpay.urlStart);
+        };
+        this.verify = function (para) {
+            var data = JSON.stringify(para);
+            return idpay.setRequest(data, idpay.urlStart + "/verify");
+        };
+        this.inquiry = function (para) {
+            var data = JSON.stringify(para);
+            return idpay.setRequest(data, idpay.urlStart + "/inquiry");
+        };
+        this.transactionsList = function (para) {
+            var data = JSON.stringify(para);
+            var page = para.page, page_size = para.page_size;
+            return idpay.setRequest(data, idpay.urlStart + "/transactions?" + (page ? "page=" + page : "") + (page && page_size ? "&page_size=" + page_size : "page_size=" + page_size));
         };
         idpay.apiKey = apiKey;
         idpay.SandBox = SandBox;
